@@ -82,20 +82,6 @@ app.get('/help/*', (req, res) => {
     });
 })
 
-app.get('/products', (req, res) => {
-    // if we have no search query
-    if(!req.query.search) {
-        return res.send({
-            error: 'you must provide a search term'
-        })
-    }
-
-    console.log(req.query.search);
-    res.send({
-        products:[]
-    })
-})
-
 // 404 page
 app.get('*', (req, res) => {
     res.render('404', {
@@ -132,4 +118,18 @@ app.listen(port, () => {
 
 // app.get('/about', (req, res) => {
 //     res.send('<h1>About page</h1>');
+// })
+
+// app.get('/products', (req, res) => {
+//     // if we have no search query
+//     if(!req.query.search) {
+//         return res.send({
+//             error: 'you must provide a search term'
+//         })
+//     }
+
+//     console.log(req.query.search);
+//     res.send({
+//         products:[]
+//     })
 // })
