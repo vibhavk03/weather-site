@@ -10,7 +10,8 @@ const getForecast = (latitude, longitude, callback) => {
         } else {
             callback(undefined, body.current.weather_descriptions[0] + '. It is ' 
             + body.current.temperature + ' degrees out. It feels like ' 
-            + body.current.feelslike + ' degree out.');
+            + body.current.feelslike + ' degree out. The cloud cover is '+ body.current.cloudcover
+            + '%. The UV index out is ' + body.current.uv_index + '.');
         }
     })
 }
