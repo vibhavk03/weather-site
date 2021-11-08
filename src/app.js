@@ -3,8 +3,10 @@ const express = require('express');
 const hbs = require('hbs');
 const getGeoCode = require('./utils/getGeoCode')
 const getForecast = require('./utils/getForecast')
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const app  = express();
+const port = process.env.PORT || 3000;
 
 // define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -103,8 +105,8 @@ app.get('*', (req, res) => {
 })
 
 // used to start the server
-app.listen(3000, () => {
-    console.log('Server is up and running on port 3000');
+app.listen(port, () => {
+    console.log('Server is up and running on port '+port);
 })
 
 // we also pass a callback function which runs when the server starts
